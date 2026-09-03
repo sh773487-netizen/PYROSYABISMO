@@ -144,7 +144,9 @@
         "e9d3b53d-70c4-4aa4-823d-387fe820623d": {
           "id": "e9d3b53d-70c4-4aa4-823d-387fe820623d",
           "name": "mirar-fijo",
-          "parameters": {}
+          "parameters": {
+            "distanciaMaxima": 3.5
+          }
         }
       },
       "gltfModel": {
@@ -211,7 +213,9 @@
         "6908ae62-786b-4d88-a7e1-b5723f9302d5": {
           "id": "6908ae62-786b-4d88-a7e1-b5723f9302d5",
           "name": "mirar-fijo",
-          "parameters": {}
+          "parameters": {
+            "distanciaMaxima": 3.5
+          }
         }
       },
       "gltfModel": {
@@ -219,7 +223,7 @@
           "type": "asset",
           "asset": "assets/Sebastian.glb"
         },
-        "animationClip": "",
+        "animationClip": "Idle",
         "loop": true
       },
       "name": "Sebastian.glb (1)",
