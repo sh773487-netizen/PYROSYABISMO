@@ -201,6 +201,16 @@
             "boton": {
               "type": "entity",
               "id": "96020334-7100-4971-9430-147b490c4920"
+            },
+            "objetivo1": {
+              "type": "entity",
+              "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
+            },
+            "animacion1": "Animacion_ataque",
+            "animacion2": "Animacion_ataque",
+            "objetivo2": {
+              "type": "entity",
+              "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f"
             }
           }
         },
@@ -211,7 +221,8 @@
             "habitat1": {
               "type": "entity",
               "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13"
-            }
+            },
+            "animacionHabitat1": "Animacion_feliz"
           }
         }
       },
@@ -223,7 +234,7 @@
         "animationClip": "Animacion_idle",
         "loop": true
       },
-      "name": "Sacarrenencia_camepensis.glb",
+      "name": "Megalopoda",
       "order": 2.5089848087860664
     },
     "beaae22e-f35c-440f-bf60-373d71b9ebc4": {
@@ -240,9 +251,9 @@
         0.7071067811865476
       ],
       "scale": [
-        6.62222187225181,
-        6.62222187225181,
-        6.62222187225181
+        6.622,
+        6.622,
+        6.622
       ],
       "geometry": null,
       "material": null,
@@ -321,7 +332,7 @@
       "imageTarget": {
         "name": "Habitat2"
       },
-      "order": 7.442168442337316
+      "order": 17.869060845391253
     },
     "849094e7-f1b9-4f03-8493-04cd2fe17a13": {
       "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13",
@@ -349,7 +360,195 @@
       "imageTarget": {
         "name": "Habitat"
       },
-      "order": 8.860342473061456
+      "order": 18.08206000367302
+    },
+    "e6c68831-a8f4-4931-9fae-02c83da021eb": {
+      "id": "e6c68831-a8f4-4931-9fae-02c83da021eb",
+      "position": [
+        5.354630336177941,
+        0,
+        -1.27
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        6.622,
+        6.622,
+        6.622
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Rex",
+      "imageTarget": {
+        "name": "Targeta3"
+      },
+      "order": 10.780617689834887
+    },
+    "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f": {
+      "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f",
+      "position": [
+        -0.000012510101018881059,
+        0.018962700675889132,
+        -4.2105653798894264e-18
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.15101177891875567,
+        0.15101177891875567,
+        0.15101177891875567
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0",
+      "components": {
+        "cf8de923-7318-425b-a38d-9b2d84c3152a": {
+          "id": "cf8de923-7318-425b-a38d-9b2d84c3152a",
+          "name": "mirar-fijo",
+          "parameters": {
+            "objetivo1": {
+              "type": "entity",
+              "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
+            },
+            "animacion1": "Animacion_ataque",
+            "animacion2": "Animacion_ataque",
+            "objetivo2": {
+              "type": "entity",
+              "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
+            },
+            "distanciaMaxima": 3.5,
+            "boton": {
+              "type": "entity",
+              "id": "96020334-7100-4971-9430-147b490c4920"
+            }
+          }
+        },
+        "fbd25533-b7f3-40ad-9874-5c07296a13a4": {
+          "id": "fbd25533-b7f3-40ad-9874-5c07296a13a4",
+          "name": "animacion-por-habitat",
+          "parameters": {
+            "habitat1": {
+              "type": "entity",
+              "id": "24fab34d-fe45-4677-9028-9b3696cb9d54"
+            },
+            "animacionHabitat1": "Animacion_muerte"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Abyssocisne_ignis.glb"
+        },
+        "animationClip": "Animation_idle",
+        "loop": true
+      },
+      "name": "Abyssocisne ignis",
+      "order": 14.90829068916963
+    },
+    "bb95820d-2a47-48ba-8589-3d9d9a443b60": {
+      "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60",
+      "position": [
+        0.00005582359137112913,
+        0,
+        0
+      ],
+      "rotation": [
+        0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        0.15101177891875567,
+        0.15101177891875567,
+        0.15101177891875567
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "e6c68831-a8f4-4931-9fae-02c83da021eb",
+      "components": {
+        "791bac40-17ba-4758-be08-e5c11ed03a9a": {
+          "id": "791bac40-17ba-4758-be08-e5c11ed03a9a",
+          "name": "mirar-fijo",
+          "parameters": {
+            "objetivo1": {
+              "type": "entity",
+              "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
+            },
+            "animacion1": "Animacion_ataque",
+            "animacion2": "Animacion_ataque",
+            "objetivo2": {
+              "type": "entity",
+              "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f"
+            },
+            "distanciaMaxima": 3.5,
+            "boton": {
+              "type": "entity",
+              "id": "96020334-7100-4971-9430-147b490c4920"
+            }
+          }
+        },
+        "f7a3f262-f535-44da-9f51-d12af38175fe": {
+          "id": "f7a3f262-f535-44da-9f51-d12af38175fe",
+          "name": "animacion-por-habitat",
+          "parameters": {
+            "habitat1": {
+              "type": "entity",
+              "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13"
+            },
+            "animacionHabitat1": "Animacion_baile"
+          }
+        }
+      },
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Elefantron_1.glb"
+        },
+        "animationClip": "Animacion_idle",
+        "loop": true
+      },
+      "name": "Pyrophantus",
+      "order": 16.16521544636543
+    },
+    "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0": {
+      "id": "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0",
+      "position": [
+        11.118,
+        0,
+        0
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        6.622,
+        6.622,
+        6.622
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Abyssocisne ",
+      "imageTarget": {
+        "name": "Targeta2"
+      },
+      "order": 16.65606168710948
     }
   },
   "spaces": {
