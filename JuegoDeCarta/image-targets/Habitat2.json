@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 85,
+    "left": 0,
+    "width": 1024,
+    "height": 1365,
+    "isRotated": true,
+    "originalWidth": 1024,
+    "originalHeight": 1536
+  },
+  "imagePath": "image-targets/Habitat2_luminance.png",
+  "metadata": null,
+  "name": "Habitat2",
+  "resources": {
+    "originalImage": "Habitat2_original.png",
+    "croppedImage": "Habitat2_cropped.png",
+    "thumbnailImage": "Habitat2_thumbnail.png",
+    "luminanceImage": "Habitat2_luminance.png"
+  },
+  "created": 1789317605511,
+  "updated": 1789317611608
+}

@@ -197,7 +197,21 @@
           "id": "1847da27-6deb-490c-beaf-08d0ab3fc84d",
           "name": "mirar-fijo",
           "parameters": {
-            "distanciaMaxima": 3.5
+            "distanciaMaxima": 3.5,
+            "boton": {
+              "type": "entity",
+              "id": "96020334-7100-4971-9430-147b490c4920"
+            }
+          }
+        },
+        "128bbc3d-ffdb-4e00-b9dc-52f04872d5b2": {
+          "id": "128bbc3d-ffdb-4e00-b9dc-52f04872d5b2",
+          "name": "animacion-por-habitat",
+          "parameters": {
+            "habitat1": {
+              "type": "entity",
+              "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13"
+            }
           }
         }
       },
@@ -234,11 +248,108 @@
       "material": null,
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
       "components": {},
-      "name": "Image Target",
+      "name": "forma",
       "imageTarget": {
         "name": "Targeta"
       },
       "order": 5.627716442471963
+    },
+    "a69c9c77-4de1-410e-b0e6-b92b477ea08b": {
+      "id": "a69c9c77-4de1-410e-b0e6-b92b477ea08b",
+      "position": [
+        -0.000010160979448488837,
+        -0.00006904357268144867,
+        0.007550335969489056
+      ],
+      "rotation": [
+        -5.809394931777245e-8,
+        0,
+        0,
+        0.9999999999999982
+      ],
+      "scale": [
+        0.6835872599076217,
+        0.9917214322741057,
+        0.1510067274252264
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Grabacin_de_pantalla_2026-09-13_105416.mp4"
+        }
+      },
+      "parentId": "beaae22e-f35c-440f-bf60-373d71b9ebc4",
+      "components": {},
+      "name": "Plane",
+      "order": 4.426839482424275,
+      "videoControls": {
+        "loop": true,
+        "paused": false,
+        "volume": 0
+      }
+    },
+    "24fab34d-fe45-4677-9028-9b3696cb9d54": {
+      "id": "24fab34d-fe45-4677-9028-9b3696cb9d54",
+      "position": [
+        0,
+        0,
+        -11.150139746342902
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        10.750292782840523,
+        10.750292782840523,
+        10.750292782840523
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Mapa1",
+      "imageTarget": {
+        "name": "Habitat2"
+      },
+      "order": 7.442168442337316
+    },
+    "849094e7-f1b9-4f03-8493-04cd2fe17a13": {
+      "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13",
+      "position": [
+        11.048627654367776,
+        0,
+        -11.15
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        10.75,
+        10.75,
+        10.75
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Mapa2",
+      "imageTarget": {
+        "name": "Habitat"
+      },
+      "order": 8.860342473061456
     }
   },
   "spaces": {
