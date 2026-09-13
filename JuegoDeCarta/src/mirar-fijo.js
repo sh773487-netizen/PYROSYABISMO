@@ -3,28 +3,20 @@ import * as ecs from '@8thwall/ecs'
 const AnimacionPorCercania = ecs.registerComponent({
   name: 'mirar-fijo',
   schema: {
-    objetivo1: ecs.eid,       
-    animacion1: ecs.string,    
-    objetivo2: ecs.eid,        
-    animacion2: ecs.string,    
-    distanciaMaxima: ecs.f32,  
-    boton: ecs.eid,            
+    objetivo1: ecs.eid,
+    animacion1: ecs.string,
+    objetivo2: ecs.eid,
+    animacion2: ecs.string,
+    distanciaMaxima: ecs.f32,
+    boton: ecs.eid,
   },
   schemaDefaults: {
     distanciaMaxima: 1.5,
   },
 
   add: (world, component) => {
-    const eidBoton = component.schema.boton
-    if (!eidBoton) return
-
-    ecs.Hidden.set(world, eidBoton, {})
-
-    if (!botonesConListener.has(eidBoton)) {
-      botonesConListener.add(eidBoton)
-      world.events.addListener(eidBoton, ecs.input.UI_CLICK, () => {
-        dispararAnimacionesActivas(world)
-      })
+    if (component.schema.boton) {
+      ecs.Hidden.set(world, component.schema.boton, {})
     }
   },
 })
@@ -34,8 +26,6 @@ const modelosConAnimacionPorCercania = ecs.defineQuery([AnimacionPorCercania])
 const estadoPorModelo = new Map()
 
 const activosPorBoton = new Map()
-
-const botonesConListener = new Set()
 
 const distanciaEntre = (world, eidA, eidB) => {
   const posA = world.transform.getWorldPosition(eidA)
@@ -52,7 +42,7 @@ const reproducirAnimacion = (world, eid, nombreClip) => {
     cursor.animationClip = nombreClip
     cursor.time = 0
     cursor.paused = false
-    return false 
+    return false
   })
 }
 
@@ -63,26 +53,9 @@ const actualizarBoton = (world, eidBoton) => {
   const estaOculto = ecs.Hidden.has(world, eidBoton)
 
   if (debeMostrarse && estaOculto) {
-    ecs.Hidden.remove(world, eidBoton) 
+    ecs.Hidden.remove(world, eidBoton)
   } else if (!debeMostrarse && !estaOculto) {
-    ecs.Hidden.set(world, eidBoton, {}) 
-  }
-}
-
-const dispararAnimacionesActivas = (world) => {
-  const modelos = modelosConAnimacionPorCercania(world)
-
-  for (const eid of modelos) {
-    const activar = estadoPorModelo.get(eid)
-    if (!activar) continue
-
-    const data = AnimacionPorCercania.get(world, eid)
-
-    if (activar === 'objetivo1') {
-      reproducirAnimacion(world, eid, data.animacion1)
-    } else if (activar === 'objetivo2') {
-      reproducirAnimacion(world, eid, data.animacion2)
-    }
+    ecs.Hidden.set(world, eidBoton, {})
   }
 }
 
@@ -134,3 +107,12 @@ const comportamiento = (world) => {
 }
 
 ecs.registerBehavior(comportamiento)
+
+export const dispararAnimaciones = (world) => {
+  for (const [eid, activar] of estadoPorModelo.entries()) {
+    if (!activar) continue
+    const data = AnimacionPorCercania.get(world, eid)
+    const clip = activar === 'objetivo1' ? data.animacion1 : data.animacion2
+    reproducirAnimacion(world, eid, clip)
+  }
+}

@@ -1,23 +1,23 @@
 {
   "type": "PLANAR",
   "properties": {
-    "top": 250,
-    "left": 154,
-    "width": 887,
-    "height": 1182,
+    "top": 31,
+    "left": 0,
+    "width": 498,
+    "height": 664,
     "isRotated": false,
-    "originalWidth": 1200,
-    "originalHeight": 1600
+    "originalWidth": 498,
+    "originalHeight": 726
   },
-  "imagePath": "image-targets/Targeta2_luminance.jpg",
+  "imagePath": "image-targets/Targeta2_luminance.png",
   "metadata": null,
   "name": "Targeta2",
   "resources": {
-    "originalImage": "Targeta2_original.jpg",
-    "croppedImage": "Targeta2_cropped.jpg",
-    "thumbnailImage": "Targeta2_thumbnail.jpg",
-    "luminanceImage": "Targeta2_luminance.jpg"
+    "originalImage": "Targeta2_original.png",
+    "croppedImage": "Targeta2_cropped.png",
+    "thumbnailImage": "Targeta2_thumbnail.png",
+    "luminanceImage": "Targeta2_luminance.png"
   },
-  "created": 1788319663295,
-  "updated": 1788319685108
+  "created": 1789247525057,
+  "updated": 1789247528478
 }

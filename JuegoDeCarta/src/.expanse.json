@@ -91,147 +91,11 @@
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
       "order": 0.6644431107322474
     },
-    "c2902bab-2981-4bd7-a531-df84cbc34deb": {
-      "id": "c2902bab-2981-4bd7-a531-df84cbc34deb",
-      "position": [
-        0,
-        0,
-        0
-      ],
-      "rotation": [
-        -0.7071067811865474,
-        0,
-        0,
-        0.7071067811865476
-      ],
-      "scale": [
-        3.5378106416615904,
-        3.5378106416615904,
-        3.5378106416615904
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "name": "Image Target",
-      "imageTarget": {
-        "name": "Targeta"
-      },
-      "order": 2.171561046208819
-    },
-    "58896180-3b56-413f-9b43-1c62c1511769": {
-      "id": "58896180-3b56-413f-9b43-1c62c1511769",
-      "position": [
-        0,
-        0,
-        0
-      ],
-      "rotation": [
-        0.7071067811865474,
-        0,
-        0,
-        0.7071067811865477
-      ],
-      "scale": [
-        0.28266069083062445,
-        0.2826606908306244,
-        0.2826606908306244
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "c2902bab-2981-4bd7-a531-df84cbc34deb",
-      "components": {
-        "e9d3b53d-70c4-4aa4-823d-387fe820623d": {
-          "id": "e9d3b53d-70c4-4aa4-823d-387fe820623d",
-          "name": "mirar-fijo",
-          "parameters": {
-            "distanciaMaxima": 3.5
-          }
-        }
-      },
-      "gltfModel": {
-        "src": {
-          "type": "asset",
-          "asset": "assets/Sebastian.glb"
-        },
-        "animationClip": "Idle",
-        "loop": true
-      },
-      "name": "Sebastian.glb",
-      "order": 4.135041937647135
-    },
-    "e1b2628d-3f3a-4292-98a3-e18c9833e3cd": {
-      "id": "e1b2628d-3f3a-4292-98a3-e18c9833e3cd",
-      "position": [
-        3.0060942058337243,
-        0,
-        0
-      ],
-      "rotation": [
-        -0.7071067811865475,
-        0,
-        0,
-        0.7071067811865476
-      ],
-      "scale": [
-        3.754153414462224,
-        3.754153414462224,
-        3.754153414462224
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
-      "name": "Image Target (1)",
-      "imageTarget": {
-        "name": "Targeta2"
-      },
-      "order": 1.4076156438189154
-    },
-    "9128e071-f5f0-4a38-bf76-e0f3ea737c7a": {
-      "id": "9128e071-f5f0-4a38-bf76-e0f3ea737c7a",
-      "position": [
-        -0.008320729552689143,
-        0,
-        0
-      ],
-      "rotation": [
-        0.7071067811865475,
-        0,
-        0,
-        0.7071067811865476
-      ],
-      "scale": [
-        0.2663716395146969,
-        0.2663716395146969,
-        0.2663716395146969
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "e1b2628d-3f3a-4292-98a3-e18c9833e3cd",
-      "components": {
-        "9144ad86-0e60-4c8a-92d4-d54a3b767255": {
-          "id": "9144ad86-0e60-4c8a-92d4-d54a3b767255",
-          "name": "mirar-fijo",
-          "parameters": {}
-        }
-      },
-      "gltfModel": {
-        "src": {
-          "type": "asset",
-          "asset": "assets/Sebastian.glb"
-        },
-        "animationClip": "Idle",
-        "loop": true
-      },
-      "name": "Sebastian.glb (1)",
-      "order": 3.4135218168113335
-    },
     "96020334-7100-4971-9430-147b490c4920": {
       "id": "96020334-7100-4971-9430-147b490c4920",
       "position": [
-        0,
-        3.298706125204856,
+        0.6470714425327662,
+        3.869494129820488,
         2.7166119956877264
       ],
       "rotation": [
@@ -248,21 +112,29 @@
       "geometry": null,
       "material": null,
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {},
+      "components": {
+        "8a3e0022-35f4-43f9-9828-84004733ac4d": {
+          "id": "8a3e0022-35f4-43f9-9828-84004733ac4d",
+          "name": "boton-por-cercania",
+          "parameters": {}
+        }
+      },
       "ui": {
         "type": "overlay",
         "width": 100,
         "height": 36,
         "background": "#ad50ff",
         "borderRadius": 18,
-        "flexDirection": "row",
+        "flexDirection": "column-reverse",
         "backgroundOpacity": 1,
         "padding": "10",
-        "gap": "6",
+        "gap": 70,
         "alignItems": "center",
-        "justifyContent": "center"
+        "justifyContent": "space-between",
+        "paddingTop": "",
+        "paddingBottom": ""
       },
-      "name": "Button",
+      "name": "Button1",
       "order": 4.130876573057147
     },
     "d45b8309-44b7-4f37-b207-56ce4aefd90c": {
@@ -299,37 +171,74 @@
       },
       "order": 0.4700598220912008
     },
-    "378800ef-65cc-4bde-8a7b-1536e10b6c94": {
-      "id": "378800ef-65cc-4bde-8a7b-1536e10b6c94",
+    "f46f677f-0a6b-49f7-8914-7310695fc4a8": {
+      "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8",
       "position": [
-        0,
-        0,
-        0
+        0.0005423610277642622,
+        -0.1076999665649585,
+        2.3914196526355292e-17
       ],
       "rotation": [
+        0.7071067811865475,
         0,
         0,
-        0,
-        1
+        0.7071067811865476
       ],
       "scale": [
-        1,
-        1,
-        1
+        0.1510067193897811,
+        0.1510067193897811,
+        0.1510067193897811
       ],
       "geometry": null,
       "material": null,
-      "parentId": "96020334-7100-4971-9430-147b490c4920",
-      "components": {},
-      "name": "Text",
-      "ui": {
-        "width": 50,
-        "height": 14,
-        "text": "Button",
-        "color": "#ffffff",
-        "fontSize": 16
+      "parentId": "beaae22e-f35c-440f-bf60-373d71b9ebc4",
+      "components": {
+        "1847da27-6deb-490c-beaf-08d0ab3fc84d": {
+          "id": "1847da27-6deb-490c-beaf-08d0ab3fc84d",
+          "name": "mirar-fijo",
+          "parameters": {
+            "distanciaMaxima": 3.5
+          }
+        }
       },
-      "order": 1.4415583928373685
+      "gltfModel": {
+        "src": {
+          "type": "asset",
+          "asset": "assets/Sacarrenencia_camepensis.glb"
+        },
+        "animationClip": "Animacion_idle",
+        "loop": true
+      },
+      "name": "Sacarrenencia_camepensis.glb",
+      "order": 2.5089848087860664
+    },
+    "beaae22e-f35c-440f-bf60-373d71b9ebc4": {
+      "id": "beaae22e-f35c-440f-bf60-373d71b9ebc4",
+      "position": [
+        -0.016932711739652717,
+        0,
+        -1.2704572218571495
+      ],
+      "rotation": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "scale": [
+        6.62222187225181,
+        6.62222187225181,
+        6.62222187225181
+      ],
+      "geometry": null,
+      "material": null,
+      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
+      "components": {},
+      "name": "Image Target",
+      "imageTarget": {
+        "name": "Targeta"
+      },
+      "order": 5.627716442471963
     }
   },
   "spaces": {
