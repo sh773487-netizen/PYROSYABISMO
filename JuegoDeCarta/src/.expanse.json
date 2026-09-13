@@ -281,7 +281,7 @@
       "scale": [
         0.6835872599076217,
         0.9917214322741057,
-        0.1510067274252264
+        0.992
       ],
       "geometry": {
         "type": "plane",
@@ -298,7 +298,7 @@
       },
       "parentId": "beaae22e-f35c-440f-bf60-373d71b9ebc4",
       "components": {},
-      "name": "Plane",
+      "name": "MegalopodaVI",
       "order": 4.426839482424275,
       "videoControls": {
         "loop": true,
@@ -549,6 +549,86 @@
         "name": "Targeta2"
       },
       "order": 16.65606168710948
+    },
+    "3c282752-681a-427b-9bc3-df96db20f6aa": {
+      "id": "3c282752-681a-427b-9bc3-df96db20f6aa",
+      "position": [
+        0,
+        -0.0012080942313500453,
+        0.0015112192295140998
+      ],
+      "rotation": [
+        -8.726425881899793e-8,
+        0,
+        0,
+        0.9999999999999961
+      ],
+      "scale": [
+        0.6835878211723045,
+        1.0138131150115104,
+        0.15101178695447395
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Grabacin_de_pantalla_2026-09-13_170156.mp4"
+        }
+      },
+      "parentId": "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0",
+      "components": {},
+      "name": "ignis",
+      "order": 16.164318343740636,
+      "videoControls": {
+        "volume": 0,
+        "loop": true
+      }
+    },
+    "dde3b2b8-e33d-46e9-8e96-0a22c75cc5b1": {
+      "id": "dde3b2b8-e33d-46e9-8e96-0a22c75cc5b1",
+      "position": [
+        0.000055823591370240955,
+        -1.6653345369377348e-16,
+        0.00557748445469711
+      ],
+      "rotation": [
+        -7.301803406356575e-8,
+        0,
+        0,
+        0.9999999999999973
+      ],
+      "scale": [
+        0.7182811699296625,
+        0.9856769838620812,
+        0.15101178695447198
+      ],
+      "geometry": {
+        "type": "plane",
+        "width": 1,
+        "height": 1
+      },
+      "material": {
+        "type": "basic",
+        "color": "#FFFFFF",
+        "textureSrc": {
+          "type": "asset",
+          "asset": "assets/Grabacin_de_pantalla_2026-09-13_171334.mp4"
+        }
+      },
+      "parentId": "e6c68831-a8f4-4931-9fae-02c83da021eb",
+      "components": {},
+      "name": "PyrophantusVI",
+      "order": 17.619015371056022,
+      "videoControls": {
+        "loop": true,
+        "volume": 0
+      }
     }
   },
   "spaces": {
