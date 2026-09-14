@@ -421,7 +421,7 @@
               "type": "entity",
               "id": "24fab34d-fe45-4677-9028-9b3696cb9d54"
             },
-            "animacionHabitat1": "Animacion_muerte"
+            "animacionHabitat1": "Animation_muerte"
           }
         },
         "492a6182-cba1-4f79-8cb0-a2b6cfd7d258": {
@@ -433,17 +433,17 @@
               "type": "entity",
               "id": "96020334-7100-4971-9430-147b490c4920"
             },
-            "animacionIdle": "Animacion_idle",
+            "animacionIdle": "Animation_idle",
             "objetivo1": {
               "type": "entity",
               "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
             },
-            "animacion1": "Animacion_ataque",
+            "animacion1": "Animation_ataque",
             "objetivo2": {
               "type": "entity",
               "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
             },
-            "animacion2": "Animacion_ataque"
+            "animacion2": "Animation_ataque"
           }
         }
       },
