@@ -121,10 +121,10 @@
       },
       "ui": {
         "type": "overlay",
-        "width": 100,
-        "height": 36,
+        "width": 118,
+        "height": 118,
         "background": "#ad50ff",
-        "borderRadius": 18,
+        "borderRadius": 0,
         "flexDirection": "column-reverse",
         "backgroundOpacity": 1,
         "padding": "10",
@@ -132,44 +132,15 @@
         "alignItems": "center",
         "justifyContent": "space-between",
         "paddingTop": "",
-        "paddingBottom": ""
+        "paddingBottom": "",
+        "image": {
+          "type": "asset",
+          "asset": "assets/Captura_de_pantalla_2026-09-07_180959.png"
+        },
+        "backgroundSize": "contain"
       },
       "name": "Button1",
       "order": 4.130876573057147
-    },
-    "d45b8309-44b7-4f37-b207-56ce4aefd90c": {
-      "id": "d45b8309-44b7-4f37-b207-56ce4aefd90c",
-      "position": [
-        -0.323,
-        0,
-        0
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "96020334-7100-4971-9430-147b490c4920",
-      "components": {},
-      "name": "Icon",
-      "ui": {
-        "width": 16,
-        "height": 16,
-        "image": {
-          "type": "url",
-          "url": "https://cdn.8thwall.com/web/assets/sprites/8w-icon-m8j35d7y.png"
-        },
-        "backgroundOpacity": 1
-      },
-      "order": 0.4700598220912008
     },
     "f46f677f-0a6b-49f7-8914-7310695fc4a8": {
       "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8",
