@@ -7,6 +7,7 @@ const AnimacionPorCercania = ecs.registerComponent({
     animacion1: ecs.string,
     objetivo2: ecs.eid,
     animacion2: ecs.string,
+    animacionIdle: ecs.string,  
     distanciaMaxima: ecs.f32,
     boton: ecs.eid,
   },
@@ -26,6 +27,8 @@ const modelosConAnimacionPorCercania = ecs.defineQuery([AnimacionPorCercania])
 const estadoPorModelo = new Map()
 
 const activosPorBoton = new Map()
+
+const estaVisible = (world, eid) => !ecs.Hidden.has(world, eid)
 
 const distanciaEntre = (world, eidA, eidB) => {
   const posA = world.transform.getWorldPosition(eidA)
@@ -65,18 +68,28 @@ const comportamiento = (world) => {
   for (const eidA of modelos) {
     const dataA = AnimacionPorCercania.get(world, eidA)
 
+    const yoVisible = estaVisible(world, eidA)
+
     const tiene1 = !!dataA.objetivo1
     const tiene2 = !!dataA.objetivo2
 
-    const distancia1 = tiene1 ? distanciaEntre(world, eidA, dataA.objetivo1) : Infinity
-    const distancia2 = tiene2 ? distanciaEntre(world, eidA, dataA.objetivo2) : Infinity
+    const cerca1 =
+      yoVisible &&
+      tiene1 &&
+      estaVisible(world, dataA.objetivo1) &&
+      distanciaEntre(world, eidA, dataA.objetivo1) <= dataA.distanciaMaxima
 
-    const cerca1 = tiene1 && distancia1 <= dataA.distanciaMaxima
-    const cerca2 = tiene2 && distancia2 <= dataA.distanciaMaxima
+    const cerca2 =
+      yoVisible &&
+      tiene2 &&
+      estaVisible(world, dataA.objetivo2) &&
+      distanciaEntre(world, eidA, dataA.objetivo2) <= dataA.distanciaMaxima
 
     let activar = null
     if (cerca1 && cerca2) {
-      activar = distancia1 <= distancia2 ? 'objetivo1' : 'objetivo2'
+      const d1 = distanciaEntre(world, eidA, dataA.objetivo1)
+      const d2 = distanciaEntre(world, eidA, dataA.objetivo2)
+      activar = d1 <= d2 ? 'objetivo1' : 'objetivo2'
     } else if (cerca1) {
       activar = 'objetivo1'
     } else if (cerca2) {
@@ -86,6 +99,10 @@ const comportamiento = (world) => {
     const activoAnterior = estadoPorModelo.get(eidA) || null
 
     if (activar !== activoAnterior) {
+      if (activar === null) {
+        reproducirAnimacion(world, eidA, dataA.animacionIdle)
+      }
+
       estadoPorModelo.set(eidA, activar)
 
       if (dataA.boton) {
