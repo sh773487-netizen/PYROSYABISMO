@@ -1,5 +1,5 @@
 import * as ecs from '@8thwall/ecs'
-import {dispararAnimaciones} from './mirar-fijo'
+import {dispararAnimaciones} from './interaccion-por-cercania'
 
 ecs.registerComponent({
   name: 'boton-activar-animaciones',

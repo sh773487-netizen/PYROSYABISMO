@@ -1,13 +1,13 @@
 import * as ecs from '@8thwall/ecs'
 
-const AnimacionPorCercania = ecs.registerComponent({
-  name: 'mirar-fijo',
+const InteraccionPorCercania = ecs.registerComponent({
+  name: 'interaccion-por-cercania',
   schema: {
     objetivo1: ecs.eid,
     animacion1: ecs.string,
     objetivo2: ecs.eid,
     animacion2: ecs.string,
-    animacionIdle: ecs.string,  
+    animacionIdle: ecs.string,
     distanciaMaxima: ecs.f32,
     boton: ecs.eid,
   },
@@ -22,7 +22,7 @@ const AnimacionPorCercania = ecs.registerComponent({
   },
 })
 
-const modelosConAnimacionPorCercania = ecs.defineQuery([AnimacionPorCercania])
+const modelosConInteraccion = ecs.defineQuery([InteraccionPorCercania])
 
 const estadoPorModelo = new Map()
 
@@ -49,6 +49,21 @@ const reproducirAnimacion = (world, eid, nombreClip) => {
   })
 }
 
+const mirarHaciaHorizontal = (world, eidA, eidObjetivo) => {
+  const posA = world.transform.getWorldPosition(eidA)
+  const posB = world.transform.getWorldPosition(eidObjetivo)
+  const dx = posB.x - posA.x
+  const dz = posB.z - posA.z
+  const angulo = Math.atan2(dx, dz)
+
+  world.transform.setWorldQuaternion(eidA, {
+    x: 0,
+    y: Math.sin(angulo / 2),
+    z: 0,
+    w: Math.cos(angulo / 2),
+  })
+}
+
 const actualizarBoton = (world, eidBoton) => {
   if (!eidBoton) return
   const activos = activosPorBoton.get(eidBoton)
@@ -63,13 +78,21 @@ const actualizarBoton = (world, eidBoton) => {
 }
 
 const comportamiento = (world) => {
-  const modelos = modelosConAnimacionPorCercania(world)
+  const modelos = modelosConInteraccion(world)
 
   for (const eidA of modelos) {
-    const dataA = AnimacionPorCercania.get(world, eidA)
+    const dataA = InteraccionPorCercania.get(world, eidA)
+
+    if (!estadoPorModelo.has(eidA)) {
+      const q = world.transform.getWorldQuaternion(eidA)
+      estadoPorModelo.set(eidA, {
+        activo: null,
+        original: {x: q.x, y: q.y, z: q.z, w: q.w},
+      })
+    }
+    const estadoA = estadoPorModelo.get(eidA)
 
     const yoVisible = estaVisible(world, eidA)
-
     const tiene1 = !!dataA.objetivo1
     const tiene2 = !!dataA.objetivo2
 
@@ -96,14 +119,21 @@ const comportamiento = (world) => {
       activar = 'objetivo2'
     }
 
-    const activoAnterior = estadoPorModelo.get(eidA) || null
+    if (activar === 'objetivo1') {
+      mirarHaciaHorizontal(world, eidA, dataA.objetivo1)
+    } else if (activar === 'objetivo2') {
+      mirarHaciaHorizontal(world, eidA, dataA.objetivo2)
+    } else if (estadoA.activo !== null) {
+      world.transform.setWorldQuaternion(eidA, estadoA.original)
+    }
 
-    if (activar !== activoAnterior) {
+
+    if (activar !== estadoA.activo) {
       if (activar === null) {
         reproducirAnimacion(world, eidA, dataA.animacionIdle)
       }
 
-      estadoPorModelo.set(eidA, activar)
+      estadoA.activo = activar
 
       if (dataA.boton) {
         if (!activosPorBoton.has(dataA.boton)) {
@@ -126,10 +156,10 @@ const comportamiento = (world) => {
 ecs.registerBehavior(comportamiento)
 
 export const dispararAnimaciones = (world) => {
-  for (const [eid, activar] of estadoPorModelo.entries()) {
-    if (!activar) continue
-    const data = AnimacionPorCercania.get(world, eid)
-    const clip = activar === 'objetivo1' ? data.animacion1 : data.animacion2
+  for (const [eid, estado] of estadoPorModelo.entries()) {
+    if (!estado.activo) continue
+    const data = InteraccionPorCercania.get(world, eid)
+    const clip = estado.activo === 'objetivo1' ? data.animacion1 : data.animacion2
     reproducirAnimacion(world, eid, clip)
   }
 }

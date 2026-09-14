@@ -113,9 +113,9 @@
       "material": null,
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
       "components": {
-        "8a3e0022-35f4-43f9-9828-84004733ac4d": {
-          "id": "8a3e0022-35f4-43f9-9828-84004733ac4d",
-          "name": "boton-por-cercania",
+        "b8b54acd-294d-4132-8a65-b9ca3ee6fcd9": {
+          "id": "b8b54acd-294d-4132-8a65-b9ca3ee6fcd9",
+          "name": "boton-activar-animaciones",
           "parameters": {}
         }
       },
@@ -193,28 +193,6 @@
       "material": null,
       "parentId": "beaae22e-f35c-440f-bf60-373d71b9ebc4",
       "components": {
-        "1847da27-6deb-490c-beaf-08d0ab3fc84d": {
-          "id": "1847da27-6deb-490c-beaf-08d0ab3fc84d",
-          "name": "mirar-fijo",
-          "parameters": {
-            "distanciaMaxima": 3.5,
-            "boton": {
-              "type": "entity",
-              "id": "96020334-7100-4971-9430-147b490c4920"
-            },
-            "objetivo1": {
-              "type": "entity",
-              "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
-            },
-            "animacion1": "Animacion_ataque",
-            "animacion2": "Animacion_ataque",
-            "objetivo2": {
-              "type": "entity",
-              "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f"
-            },
-            "animacionIdle": "Animacion_idle"
-          }
-        },
         "128bbc3d-ffdb-4e00-b9dc-52f04872d5b2": {
           "id": "128bbc3d-ffdb-4e00-b9dc-52f04872d5b2",
           "name": "animacion-por-habitat",
@@ -224,6 +202,28 @@
               "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13"
             },
             "animacionHabitat1": "Animacion_feliz"
+          }
+        },
+        "ad3fe2f3-5359-40dd-81dd-efcf43276b18": {
+          "id": "ad3fe2f3-5359-40dd-81dd-efcf43276b18",
+          "name": "interaccion-por-cercania",
+          "parameters": {
+            "boton": {
+              "type": "entity",
+              "id": "96020334-7100-4971-9430-147b490c4920"
+            },
+            "objetivo1": {
+              "type": "entity",
+              "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
+            },
+            "animacion1": "Animacion_ataque",
+            "objetivo2": {
+              "type": "entity",
+              "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f"
+            },
+            "distanciaMaxima": 3.5,
+            "animacion2": "Animacion_ataque",
+            "animacionIdle": "Animacion_idle"
           }
         }
       },
@@ -413,28 +413,6 @@
       "material": null,
       "parentId": "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0",
       "components": {
-        "cf8de923-7318-425b-a38d-9b2d84c3152a": {
-          "id": "cf8de923-7318-425b-a38d-9b2d84c3152a",
-          "name": "mirar-fijo",
-          "parameters": {
-            "objetivo1": {
-              "type": "entity",
-              "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
-            },
-            "animacion1": "Animacion_ataque",
-            "animacion2": "Animacion_ataque",
-            "objetivo2": {
-              "type": "entity",
-              "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
-            },
-            "distanciaMaxima": 3.5,
-            "boton": {
-              "type": "entity",
-              "id": "96020334-7100-4971-9430-147b490c4920"
-            },
-            "animacionIdle": "Animacion_idle"
-          }
-        },
         "fbd25533-b7f3-40ad-9874-5c07296a13a4": {
           "id": "fbd25533-b7f3-40ad-9874-5c07296a13a4",
           "name": "animacion-por-habitat",
@@ -444,6 +422,28 @@
               "id": "24fab34d-fe45-4677-9028-9b3696cb9d54"
             },
             "animacionHabitat1": "Animacion_muerte"
+          }
+        },
+        "492a6182-cba1-4f79-8cb0-a2b6cfd7d258": {
+          "id": "492a6182-cba1-4f79-8cb0-a2b6cfd7d258",
+          "name": "interaccion-por-cercania",
+          "parameters": {
+            "distanciaMaxima": 3.5,
+            "boton": {
+              "type": "entity",
+              "id": "96020334-7100-4971-9430-147b490c4920"
+            },
+            "animacionIdle": "Animacion_idle",
+            "objetivo1": {
+              "type": "entity",
+              "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
+            },
+            "animacion1": "Animacion_ataque",
+            "objetivo2": {
+              "type": "entity",
+              "id": "bb95820d-2a47-48ba-8589-3d9d9a443b60"
+            },
+            "animacion2": "Animacion_ataque"
           }
         }
       },
@@ -480,28 +480,6 @@
       "material": null,
       "parentId": "e6c68831-a8f4-4931-9fae-02c83da021eb",
       "components": {
-        "791bac40-17ba-4758-be08-e5c11ed03a9a": {
-          "id": "791bac40-17ba-4758-be08-e5c11ed03a9a",
-          "name": "mirar-fijo",
-          "parameters": {
-            "objetivo1": {
-              "type": "entity",
-              "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
-            },
-            "animacion1": "Animacion_ataque",
-            "animacion2": "Animacion_ataque",
-            "objetivo2": {
-              "type": "entity",
-              "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f"
-            },
-            "distanciaMaxima": 3.5,
-            "boton": {
-              "type": "entity",
-              "id": "96020334-7100-4971-9430-147b490c4920"
-            },
-            "animacionIdle": "Animacion_idle"
-          }
-        },
         "f7a3f262-f535-44da-9f51-d12af38175fe": {
           "id": "f7a3f262-f535-44da-9f51-d12af38175fe",
           "name": "animacion-por-habitat",
@@ -511,6 +489,28 @@
               "id": "849094e7-f1b9-4f03-8493-04cd2fe17a13"
             },
             "animacionHabitat1": "Animacion_baile"
+          }
+        },
+        "6598734c-7726-4161-aac4-5a35bba8844a": {
+          "id": "6598734c-7726-4161-aac4-5a35bba8844a",
+          "name": "interaccion-por-cercania",
+          "parameters": {
+            "distanciaMaxima": 3.5,
+            "boton": {
+              "type": "entity",
+              "id": "96020334-7100-4971-9430-147b490c4920"
+            },
+            "animacion1": "Animacion_ataque",
+            "animacion2": "Animacion_ataque",
+            "objetivo1": {
+              "type": "entity",
+              "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8"
+            },
+            "animacionIdle": "Animacion_idle",
+            "objetivo2": {
+              "type": "entity",
+              "id": "e9798eea-ac3f-4c1a-bb99-cc2f93c4af2f"
+            }
           }
         }
       },
