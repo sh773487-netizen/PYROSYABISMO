@@ -1,6 +1,6 @@
 import * as ecs from '@8thwall/ecs'
 
-const InteraccionPorCercania = ecs.registerComponent({
+const AnimacionPorCercania = ecs.registerComponent({
   name: 'interaccion-por-cercania',
   schema: {
     objetivo1: ecs.eid,
@@ -9,24 +9,15 @@ const InteraccionPorCercania = ecs.registerComponent({
     animacion2: ecs.string,
     animacionIdle: ecs.string,
     distanciaMaxima: ecs.f32,
-    boton: ecs.eid,
   },
   schemaDefaults: {
     distanciaMaxima: 1.5,
   },
-
-  add: (world, component) => {
-    if (component.schema.boton) {
-      ecs.Hidden.set(world, component.schema.boton, {})
-    }
-  },
 })
 
-const modelosConInteraccion = ecs.defineQuery([InteraccionPorCercania])
+const modelosConAnimacionPorCercania = ecs.defineQuery([AnimacionPorCercania])
 
 const estadoPorModelo = new Map()
-
-const activosPorBoton = new Map()
 
 const estaVisible = (world, eid) => !ecs.Hidden.has(world, eid)
 
@@ -64,24 +55,11 @@ const mirarHaciaHorizontal = (world, eidA, eidObjetivo) => {
   })
 }
 
-const actualizarBoton = (world, eidBoton) => {
-  if (!eidBoton) return
-  const activos = activosPorBoton.get(eidBoton)
-  const debeMostrarse = !!activos && activos.size > 0
-  const estaOculto = ecs.Hidden.has(world, eidBoton)
-
-  if (debeMostrarse && estaOculto) {
-    ecs.Hidden.remove(world, eidBoton)
-  } else if (!debeMostrarse && !estaOculto) {
-    ecs.Hidden.set(world, eidBoton, {})
-  }
-}
-
 const comportamiento = (world) => {
-  const modelos = modelosConInteraccion(world)
+  const modelos = modelosConAnimacionPorCercania(world)
 
   for (const eidA of modelos) {
-    const dataA = InteraccionPorCercania.get(world, eidA)
+    const dataA = AnimacionPorCercania.get(world, eidA)
 
     if (!estadoPorModelo.has(eidA)) {
       const q = world.transform.getWorldQuaternion(eidA)
@@ -127,39 +105,17 @@ const comportamiento = (world) => {
       world.transform.setWorldQuaternion(eidA, estadoA.original)
     }
 
-
     if (activar !== estadoA.activo) {
-      if (activar === null) {
+      if (activar === 'objetivo1') {
+        reproducirAnimacion(world, eidA, dataA.animacion1)
+      } else if (activar === 'objetivo2') {
+        reproducirAnimacion(world, eidA, dataA.animacion2)
+      } else {
         reproducirAnimacion(world, eidA, dataA.animacionIdle)
       }
-
       estadoA.activo = activar
-
-      if (dataA.boton) {
-        if (!activosPorBoton.has(dataA.boton)) {
-          activosPorBoton.set(dataA.boton, new Set())
-        }
-        const conjunto = activosPorBoton.get(dataA.boton)
-
-        if (activar !== null) {
-          conjunto.add(eidA)
-        } else {
-          conjunto.delete(eidA)
-        }
-
-        actualizarBoton(world, dataA.boton)
-      }
     }
   }
 }
 
 ecs.registerBehavior(comportamiento)
-
-export const dispararAnimaciones = (world) => {
-  for (const [eid, estado] of estadoPorModelo.entries()) {
-    if (!estado.activo) continue
-    const data = InteraccionPorCercania.get(world, eid)
-    const clip = estado.activo === 'objetivo1' ? data.animacion1 : data.animacion2
-    reproducirAnimacion(world, eid, clip)
-  }
-}

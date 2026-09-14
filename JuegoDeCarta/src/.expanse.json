@@ -44,12 +44,12 @@
       "material": null,
       "name": "Camera",
       "position": [
-        0,
-        2,
-        3
+        2.9202819825172437,
+        3.660084920188268,
+        6.082521428688585
       ],
       "rotation": [
-        0.0004436887233141012,
+        0.00044368872331410124,
         0.9659425615285845,
         -0.25875089860082223,
         0.0016563336561801576
@@ -91,92 +91,10 @@
       "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
       "order": 0.6644431107322474
     },
-    "96020334-7100-4971-9430-147b490c4920": {
-      "id": "96020334-7100-4971-9430-147b490c4920",
-      "position": [
-        2.542435478316223,
-        3.869494129820488,
-        2.7166119956877264
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "88453035-dc0f-486d-868a-8ff7c2fda864",
-      "components": {
-        "b8b54acd-294d-4132-8a65-b9ca3ee6fcd9": {
-          "id": "b8b54acd-294d-4132-8a65-b9ca3ee6fcd9",
-          "name": "boton-activar-animaciones",
-          "parameters": {}
-        }
-      },
-      "ui": {
-        "type": "overlay",
-        "width": 88,
-        "height": 43,
-        "background": "#000000",
-        "borderRadius": 18,
-        "flexDirection": "column-reverse",
-        "backgroundOpacity": 1,
-        "padding": "10",
-        "gap": 70,
-        "alignItems": "center",
-        "justifyContent": "space-between",
-        "paddingTop": "",
-        "paddingBottom": ""
-      },
-      "name": "Button1",
-      "order": 4.130876573057147
-    },
-    "d45b8309-44b7-4f37-b207-56ce4aefd90c": {
-      "id": "d45b8309-44b7-4f37-b207-56ce4aefd90c",
-      "position": [
-        -0.323,
-        0,
-        0
-      ],
-      "rotation": [
-        0,
-        0,
-        0,
-        1
-      ],
-      "scale": [
-        1,
-        1,
-        1
-      ],
-      "geometry": null,
-      "material": null,
-      "parentId": "96020334-7100-4971-9430-147b490c4920",
-      "components": {},
-      "name": "Icon",
-      "ui": {
-        "width": 98,
-        "height": 25,
-        "image": {
-          "type": "asset",
-          "asset": "assets/Captura_de_pantalla_2026-09-07_180959.png"
-        },
-        "backgroundOpacity": 1,
-        "backgroundSize": "contain",
-        "borderRadius": 0
-      },
-      "order": 0.4700598220912008
-    },
     "f46f677f-0a6b-49f7-8914-7310695fc4a8": {
       "id": "f46f677f-0a6b-49f7-8914-7310695fc4a8",
       "position": [
-        0.0005423610277642622,
+        0.01989419896904792,
         -0.1076999665649585,
         2.3914196526355292e-17
       ],
@@ -238,7 +156,7 @@
         "loop": true
       },
       "name": "Megalopoda",
-      "order": 2.5089848087860664
+      "order": 6.22040634891171
     },
     "beaae22e-f35c-440f-bf60-373d71b9ebc4": {
       "id": "beaae22e-f35c-440f-bf60-373d71b9ebc4",
@@ -525,7 +443,7 @@
         "loop": true
       },
       "name": "Pyrophantus",
-      "order": 16.16521544636543
+      "order": 18.738862053796073
     },
     "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0": {
       "id": "f4167e5c-ac6f-4719-b0d4-dd3e67e33ef0",
